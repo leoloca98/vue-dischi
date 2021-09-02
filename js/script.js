@@ -21,6 +21,7 @@ const app = new Vue({
     data: {
         albums: [],
         genres: [],
+        selected: '',
     },
     computed: {
         mostRecent() {
