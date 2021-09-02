@@ -24,16 +24,23 @@
         <header>
             <div class="container">
                 <img src="./img/spotify-logo.png" alt="Spotify Logo">
+                <div class="genre">
+                    <span>Genre: </span>
+                    <select name="Genre" class="text-white">
+                        <option value="All">All</option>
+                        <option v-for="genre in genres" :value="genre">{{ genre }}</option>
+                    </select>
+                </div>
             </div>
         </header>
         <main class="container">
             <section id="album-section">
                 <ul>
-                    <li v-for="(album, index) in albums" class="card">
-                        <img :src="albums[index].poster" alt="">
-                        <h2 class="title">{{ albums[index].title }}</h2>
-                        <address class="author">{{ albums[index].author }}</address>
-                        <time datetime="1988" class="year">{{ albums[index].year }}</time>
+                    <li v-for="album in mostRecent" class="card">
+                        <img :src="album.poster" :alt="album.title">
+                        <h2 class="title">{{album.title }}</h2>
+                        <address class="author">{{ album.author }}</address>
+                        <time datetime="1988" class="year">{{ album.year }}</time>
                     </li>
                 </ul>
             </section>

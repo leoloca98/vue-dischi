@@ -20,14 +20,26 @@ const app = new Vue({
     el: '#app',
     data: {
         albums: [],
+        genres: [],
     },
-    computed: {},
+    computed: {
+        mostRecent() {
+            return this.albums
+                .sort((b, a) => new Date(a.year) - new Date(b.year));
+        },
+    },
     methods: {},
     created() {
         axios
             .get('https://flynn.boolean.careers/exercises/api/array/music')
             .then((res) => {
                 this.albums = res.data.response;
-            })
+                for (let i = 0; i < this.albums.length; i++) {
+                    if (!this.genres.includes(this.albums[i].genre)) {
+                        this.genres.push(this.albums[i].genre);
+                    }
+                }
+                console.log(this.genres);
+            });
     },
 });
