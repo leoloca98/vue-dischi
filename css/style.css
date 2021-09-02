@@ -16,6 +16,11 @@ address {
     font-style: normal;
 }
 
+ul, li {
+    text-decoration: none;
+    list-style-type: none;
+}
+
 /* UTILS */
 
 .container {
@@ -43,7 +48,7 @@ header .container img {
 
 /* ALBUM SECTION */
 
-#album-section {
+#album-section ul {
     padding-top: 100px;
     display: flex;
     flex-wrap: wrap;

@@ -6,6 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Compilation</title>
+    <!-- * CSS -->
     <link rel="stylesheet" href="./css/style.css">
     <!--* FontAwesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
@@ -27,114 +28,14 @@
         </header>
         <main class="container">
             <section id="album-section">
-                <div class="card text-white">
-                    <img src="./img/demo.jpg" alt="New Jersey">
-                    <h2 class="title">NEW JERSEY</h2>
-                    <address class="author">Bon Jovi</address>
-                    <time datetime="1988" class="year">1988</time>
-                </div>
-                <div class="card text-white">
-                    <img src="./img/demo.jpg" alt="New Jersey">
-                    <h2 class="title">NEW JERSEY</h2>
-                    <address class="author">Bon Jovi</address>
-                    <time datetime="1988" class="year">1988</time>
-                </div>
-                <div class="card text-white">
-                    <img src="./img/demo.jpg" alt="New Jersey">
-                    <h2 class="title">NEW JERSEY</h2>
-                    <address class="author">Bon Jovi</address>
-                    <time datetime="1988" class="year">1988</time>
-                </div>
-                <div class="card text-white">
-                    <img src="./img/demo.jpg" alt="New Jersey">
-                    <h2 class="title">NEW JERSEY</h2>
-                    <address class="author">Bon Jovi</address>
-                    <time datetime="1988" class="year">1988</time>
-                </div>
-                <div class="card text-white">
-                    <img src="./img/demo.jpg" alt="New Jersey">
-                    <h2 class="title">NEW JERSEY</h2>
-                    <address class="author">Bon Jovi</address>
-                    <time datetime="1988" class="year">1988</time>
-                </div>
-                <div class="card text-white">
-                    <img src="./img/demo.jpg" alt="New Jersey">
-                    <h2 class="title">NEW JERSEY</h2>
-                    <address class="author">Bon Jovi</address>
-                    <time datetime="1988" class="year">1988</time>
-                </div>
-                <div class="card text-white">
-                    <img src="./img/demo.jpg" alt="New Jersey">
-                    <h2 class="title">NEW JERSEY</h2>
-                    <address class="author">Bon Jovi</address>
-                    <time datetime="1988" class="year">1988</time>
-                </div>
-                <div class="card text-white">
-                    <img src="./img/demo.jpg" alt="New Jersey">
-                    <h2 class="title">NEW JERSEY</h2>
-                    <address class="author">Bon Jovi</address>
-                    <time datetime="1988" class="year">1988</time>
-                </div>
-                <div class="card text-white">
-                    <img src="./img/demo.jpg" alt="New Jersey">
-                    <h2 class="title">NEW JERSEY</h2>
-                    <address class="author">Bon Jovi</address>
-                    <time datetime="1988" class="year">1988</time>
-                </div>
-                <div class="card text-white">
-                    <img src="./img/demo.jpg" alt="New Jersey">
-                    <h2 class="title">NEW JERSEY</h2>
-                    <address class="author">Bon Jovi</address>
-                    <time datetime="1988" class="year">1988</time>
-                </div>
-                <div class="card text-white">
-                    <img src="./img/demo.jpg" alt="New Jersey">
-                    <h2 class="title">NEW JERSEY</h2>
-                    <address class="author">Bon Jovi</address>
-                    <time datetime="1988" class="year">1988</time>
-                </div>
-                <div class="card text-white">
-                    <img src="./img/demo.jpg" alt="New Jersey">
-                    <h2 class="title">NEW JERSEY</h2>
-                    <address class="author">Bon Jovi</address>
-                    <time datetime="1988" class="year">1988</time>
-                </div>
-                <div class="card text-white">
-                    <img src="./img/demo.jpg" alt="New Jersey">
-                    <h2 class="title">NEW JERSEY</h2>
-                    <address class="author">Bon Jovi</address>
-                    <time datetime="1988" class="year">1988</time>
-                </div>
-                <div class="card text-white">
-                    <img src="./img/demo.jpg" alt="New Jersey">
-                    <h2 class="title">NEW JERSEY</h2>
-                    <address class="author">Bon Jovi</address>
-                    <time datetime="1988" class="year">1988</time>
-                </div>
-                <div class="card text-white">
-                    <img src="./img/demo.jpg" alt="New Jersey">
-                    <h2 class="title">NEW JERSEY</h2>
-                    <address class="author">Bon Jovi</address>
-                    <time datetime="1988" class="year">1988</time>
-                </div>
-                <div class="card text-white">
-                    <img src="./img/demo.jpg" alt="New Jersey">
-                    <h2 class="title">NEW JERSEY</h2>
-                    <address class="author">Bon Jovi</address>
-                    <time datetime="1988" class="year">1988</time>
-                </div>
-                <div class="card text-white">
-                    <img src="./img/demo.jpg" alt="New Jersey">
-                    <h2 class="title">NEW JERSEY</h2>
-                    <address class="author">Bon Jovi</address>
-                    <time datetime="1988" class="year">1988</time>
-                </div>
-                <div class="card text-white">
-                    <img src="./img/demo.jpg" alt="New Jersey">
-                    <h2 class="title">NEW JERSEY</h2>
-                    <address class="author">Bon Jovi</address>
-                    <time datetime="1988" class="year">1988</time>
-                </div>
+                <ul>
+                    <li v-for="(album, index) in albums" class="card">
+                        <img :src="albums[index].poster" alt="">
+                        <h2 class="title">{{ albums[index].title }}</h2>
+                        <address class="author">{{ albums[index].author }}</address>
+                        <time datetime="1988" class="year">{{ albums[index].year }}</time>
+                    </li>
+                </ul>
             </section>
         </main>
     </div>
