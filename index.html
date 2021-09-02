@@ -36,13 +36,11 @@
         <main class="container">
             <section id="album-section">
                 <ul>
-                    <li v-for="album in mostRecent" class="card">
-                        <div v-if="album.genre == selected || selected == 'All' ">
-                            <img :src="album.poster" :alt="album.title">
-                            <h2 class="title">{{album.title }}</h2>
-                            <address class="author">{{ album.author }}</address>
-                            <time datetime="1988" class="year">{{ album.year }}</time>
-                        </div>
+                    <li v-for="album in mostRecent" v-if="album.genre == selected || selected == 'All' " class="card">
+                        <img :src="album.poster" :alt="album.title">
+                        <h2 class="title">{{album.title }}</h2>
+                        <address class="author">{{ album.author }}</address>
+                        <time datetime="1988" class="year">{{ album.year }}</time>
                     </li>
                 </ul>
             </section>
